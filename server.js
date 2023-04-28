@@ -1,11 +1,14 @@
 // third-party modules and packagees
 const express = require("express");
-const dotenv = require("dotenv");
+const dotenv = require("dotenv").config();
 
 // local modules and packages
 const contactRoutes = require("./routes/contactRoutes.js");
 const errorHandler = require("./middleware/errorHandler.js");
+const connectDb = require("./config/dbConnection.js");
 
+// DB connection
+connectDb();
 // initialize express into app
 const app = express();
 
