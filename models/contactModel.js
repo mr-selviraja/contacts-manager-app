@@ -16,11 +16,6 @@ const contactSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add the phone number!"],
     },
-
-    bloodGroup: {
-      type: String,
-      required: [true, "Please add the Blood group!"],
-    },
   },
   { timestamps: true }
 );
