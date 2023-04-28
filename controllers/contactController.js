@@ -68,17 +68,14 @@ const updateContact = asyncHandler(async (req, res) => {
 // @access PUBLIC
 const deleteContact = asyncHandler(async (req, res) => {
   const contact = await Contact.findById(req.params.id);
-  console.log(`contact: ${contact}`);
 
   if (!contact) {
     console.log("Got in!");
     res.status(404);
     throw new Error("Contact not Found!");
   }
-  console.log(`Passed validation`);
 
   await Contact.findByIdAndRemove(req.params.id);
-  console.log(`Removed`);
 
   res.status(200).json(contact);
 });
