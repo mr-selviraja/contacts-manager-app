@@ -10,6 +10,7 @@ const errorHandler = (err, req, res, next) => {
         message: err.message,
         stackTrace: err.stack,
       });
+      break;
 
     case constants.NOT_FOUND:
       res.json({
@@ -17,6 +18,7 @@ const errorHandler = (err, req, res, next) => {
         message: err.message,
         stackTrace: err.stack,
       });
+      break;
 
     case constants.UNAUTHORIZED:
       res.json({
@@ -24,6 +26,7 @@ const errorHandler = (err, req, res, next) => {
         message: err.message,
         stackTrace: err.stack,
       });
+      break;
 
     case constants.FORBIDDEN:
       res.json({
@@ -31,6 +34,7 @@ const errorHandler = (err, req, res, next) => {
         message: err.message,
         stackTrace: err.stack,
       });
+      break;
 
     case constants.SERVER_ERROR:
       res.json({
@@ -38,6 +42,7 @@ const errorHandler = (err, req, res, next) => {
         message: err.message,
         stackTrace: err.stack,
       });
+      break;
 
     default:
       console.log("No Error, All good!");
